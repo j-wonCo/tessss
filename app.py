@@ -9,7 +9,7 @@ def hello_world():
 
 
 @app.route("/admin")
-def hello_world():
+def hello_admin():
     return "<html>Hello Admin! KKKK</html>"
 
 
