@@ -14,9 +14,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Flask 앱 실행 환경 변수 설정
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=80  # 포트를 80으로 설정
 
-# 포트 노출 (기본 80 포트)
+# 포트 노출 (80번 포트)
 EXPOSE 80
 
 # Flask 서버 실행
-CMD ["flask", "run"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
