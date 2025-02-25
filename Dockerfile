@@ -16,8 +16,5 @@ ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=80  # 포트를 80으로 설정
 
-# 포트 노출 (80번 포트)
-EXPOSE 80
-
 # Flask 서버 실행
 CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
