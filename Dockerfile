@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 80
 # Flask 서버 실행
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
+CMD ["python", "app.py"]
