@@ -9,8 +9,9 @@ COPY requirements.txt .
 
 # 의존성 설치
 RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
 
-EXPOSE 50505
+EXPOSE 80
 # Flask 서버 실행
-ENTRYPOINT ["gunicorn", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
